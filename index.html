@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<script>
+		
 		let actions = { 
 				"google": "https://www.google.com/",
 				"duckduckgo": "https://duckduckgo.com/",
@@ -11,14 +12,12 @@
 };
 		// TODO: create a handler
     window.addEventListener("load", function(){
-        // TODO: register the handler
-		const submitButton = document.querySelector("button");
-		submitButton.addEventListener("click", setSearchEngine);
+    	form = document.querySelector("form");
+		form.addEventListener("submit", setSearchEngine);
 	});
-		function setSearchEngine() {
-			
-			let selectedButton = document.querySelector("input[name=engine]:checked");
-			let form = document.querySelector("form");			
+
+		function setSearchEngine() {	
+			let selectedButton = document.querySelector("input[name=engine]:checked");			
 		    let key = selectedButton.value;
             let actionURL = actions[key];
 			form.setAttribute('action', actionURL);
@@ -40,3 +39,4 @@
 	</form>
 
 </body>
+
